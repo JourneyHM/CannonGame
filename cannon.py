@@ -1,11 +1,8 @@
 """Cannon, hitting targets with projectiles.
 
-Exercises
+Programador 1: Iván Santiago Hernández Mendoza - A01662556
+Programador 2: Diego Jacobo Martínez - A01656583 
 
-1. Keep score by counting target hits.
-2. Vary the effect of gravity.
-3. Apply gravity to the targets.
-4. Change the speed of the ball.
 """
 
 from random import randrange
@@ -65,15 +62,11 @@ def move():
     targets.clear()
 
     for target in dupe:
-        if abs(target - ball) > 13:
-            targets.append(target)
+        if (abs(target - ball) > 13)&inside(target):    # Se añadio el salir de la pantalla
+            targets.append(target)                      # como condicion para borrar la ball
 
     draw()
-
-    for target in targets:
-        if not inside(target):
-            return
-
+    # Se borro la condicion que terminaba el juego si una ball salia de la pantalla
     ontimer(move, 50)
 
 
