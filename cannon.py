@@ -62,8 +62,10 @@ def move():
     targets.clear()
 
     for target in dupe:
-        if (abs(target - ball) > 13)&inside(target):    # Se añadio el salir de la pantalla
-            targets.append(target)                      # como condicion para borrar la ball
+        if (abs(target - ball) > 13):   # Se añadio el salir de la pantalla
+            targets.append(target)      # como condicion para reposicionar la ball
+        if not inside(target):
+            target.x = 200
 
     draw()
     # Se borro la condicion que terminaba el juego si una ball salia de la pantalla
