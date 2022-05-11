@@ -3,6 +3,8 @@
 Programador 1: Iván Santiago Hernández Mendoza - A01662556
 Programador 2: Diego Jacobo Martínez - A01656583 
 
+Fecha: 11 / 05 / 2022
+
 """
 
 from random import randrange
@@ -20,8 +22,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 300) / 25        # Se añadió más velocidad al proyectil tanto en x, como en y.
+        speed.y = (y + 300) / 25
 
 
 def inside(xy):
@@ -52,7 +54,7 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 20                  # Velocidad aumentada del despliegue de los targets
 
     if inside(ball):
         speed.y -= 0.35
